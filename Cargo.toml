@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = [
+    "packages/client",
+    "packages/server",
+]
+
+[workspace.dependencies]
+dioxus = { version = "0.7.2" }
+
+# workspace
+client = { path = "packages/client" }
+server = { path = "packages/server" }
