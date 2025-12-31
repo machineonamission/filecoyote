@@ -13,3 +13,5 @@ it's very similar to hydrus's tags
 - Value: the tag value (eg: 'safe', 'john doe', 3, etc)
 
 for those coming from hydrus, essentially filecoyote works the same except all tags must be namespaced.
+
+i mean you can just make new tag categories with no value but that's not really how the system is designed

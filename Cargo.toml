@@ -1,5 +1,5 @@
 [package]
-name = "client"
+name = "filecoyote"
 version = "0.1.0"
 edition = "2024"
 
@@ -13,6 +13,7 @@ sea-orm = { version = "2.0.0-rc", features = ["sqlx-sqlite", "runtime-tokio-nati
 
 [features]
 default = []
+# designed for web, but desktop and other platforms should work just fine!
 web = ["dioxus/web"]
 #desktop = ["dioxus/desktop"]
 server = ["dioxus/server", "dep:sea-orm"]
