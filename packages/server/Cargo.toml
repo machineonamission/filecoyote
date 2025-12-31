@@ -5,7 +5,8 @@ edition = "2024"
 
 [dependencies]
 dioxus = { workspace = true, features = ["fullstack"] }
-rusqlite = "0.38.0"
+sea-orm = { version = "2.0.0-rc", features = ["sqlx-sqlite", "runtime-tokio-native-tls", "macros",
+    "with-chrono", "with-json", "schema-sync", "entity-registry", ] }
 
 [features]
 server = ["dioxus/server"]

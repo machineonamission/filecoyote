@@ -20,7 +20,7 @@ fn main() {
     #[cfg(feature = "server")]
     dioxus::serve(|| async move {
         server::init().await;
-        
+
         // default stuff to let this function continue as normal
         Ok(dioxus::server::router(App))
     });
