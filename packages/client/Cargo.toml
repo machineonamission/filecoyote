@@ -9,9 +9,6 @@ server = { workspace = true }
 
 [features]
 default = []
-#web = ["dioxus/web"]
-desktop = ["dioxus/desktop"]
+web = ["dioxus/web"]
+#desktop = ["dioxus/desktop"]
 server = ["dioxus/server", "server/server"]
-
-[dev-dependencies]
-dioxus-cli = "0.7.2"
