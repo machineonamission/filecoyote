@@ -2,14 +2,18 @@
 
 use sea_orm::entity::prelude::*;
 
+// store for massive blobs of file data
+
 #[sea_orm::model]
 #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
-#[sea_orm(table_name = "thumbnails")]
+#[sea_orm(table_name = "file_data")]
 pub struct Model {
     #[sea_orm(primary_key, auto_increment = false)]
     pub file_id: i64,
+
     #[sea_orm(column_type = "Blob")]
-    pub thumbnail: Vec<u8>,
+    pub data: Vec<u8>,
+
     #[sea_orm(
         belongs_to,
         from = "file_id",
@@ -17,7 +21,7 @@ pub struct Model {
         on_update = "Cascade",
         on_delete = "Cascade"
     )]
-    pub file_store: HasOne<super::file_store::Entity>,
+    pub file: HasOne<super::file::Entity>,
 }
 
 impl ActiveModelBehavior for ActiveModel {}

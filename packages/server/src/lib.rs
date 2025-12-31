@@ -1,6 +1,7 @@
 use dioxus::fullstack::Lazy;
 use dioxus::prelude::*;
 use sea_orm::{Database, DatabaseConnection};
+use std::sync::{LazyLock, OnceLock};
 
 mod db;
 
@@ -9,19 +10,12 @@ pub async fn echo(input: String) -> Result<String, ServerFnError> {
     Ok(input)
 }
 
+async fn init_db() {}
+
 pub async fn init() {
     println!("server init");
-    let db = Database::connect(
-        r"sqlite://C:/Users/Melody/RustroverProjects/filecoyote/db.sqlite?mode=rwc",
-    )
-        .await.unwrap();
-    // synchronizes database schema with entity definitions
-    println!("{}", module_path!());
-    let reg = db.get_schema_registry("server::db::entity::*");
-    println!("{:?}", reg);
-    reg
-        .sync(&db)
-        .await.unwrap();
+    // init the db
+    DATABASE.get();
 }
 
 static DATABASE: Lazy<DatabaseConnection> = Lazy::new(|| async move {
@@ -30,11 +24,7 @@ static DATABASE: Lazy<DatabaseConnection> = Lazy::new(|| async move {
     )
     .await?;
     // synchronizes database schema with entity definitions
-    println!("{}", module_path!());
     let reg = db.get_schema_registry("server::db::entity::*");
-    println!("{:?}", reg);
-    reg
-        .sync(&db)
-        .await?;
+    reg.sync(&db).await?;
     dioxus::Ok(db)
 });

@@ -2,8 +2,9 @@
 
 pub mod prelude;
 
-pub mod file_store;
-pub mod file_to_tags;
-pub mod tags;
-pub mod thumbnails;
-pub mod tagdata;
+pub mod file;
+pub mod tag_entry;
+pub mod tag;
+pub mod thumbnail;
+pub mod tag_data;
+mod file_data;

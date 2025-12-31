@@ -2,16 +2,21 @@
 
 use sea_orm::entity::prelude::*;
 
+// basic list of tags
+
 #[sea_orm::model]
 #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
-#[sea_orm(table_name = "tags")]
+#[sea_orm(table_name = "tag")]
 pub struct Model {
+
     #[sea_orm(primary_key)]
     pub id: i64,
+
     #[sea_orm(column_type = "Text", unique)]
     pub name: String,
+
     #[sea_orm(has_many)]
-    pub file_to_tags: HasMany<super::file_to_tags::Entity>,
+    pub tag_entries: HasMany<super::tag_entry::Entity>,
 }
 
 impl ActiveModelBehavior for ActiveModel {}
