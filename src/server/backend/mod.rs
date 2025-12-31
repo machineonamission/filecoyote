@@ -1,4 +1,5 @@
-mod db;
+pub mod db;
+pub mod entry;
 
 use dioxus::fullstack::Lazy;
 use sea_orm::{Database, DatabaseConnection};

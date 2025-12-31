@@ -2,6 +2,7 @@ use views::Home;
 use dioxus::prelude::*;
 
 mod views;
+pub mod entry;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
