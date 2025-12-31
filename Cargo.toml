@@ -1,10 +1,18 @@
-[workspace]
-resolver = "2"
-members = [
-    "packages/client",
-    "packages/server",
-]
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2024"
 
-[workspace.dependencies]
-dioxus = { version = "0.7.2" }
-server = { path = "packages/server" }
+[dependencies]
+dioxus = { version = "0.7.2", features = ["router", "fullstack"] }
+
+# server deps
+
+sea-orm = { version = "2.0.0-rc", features = ["sqlx-sqlite", "runtime-tokio-native-tls", "macros",
+    "with-chrono", "with-json", "schema-sync", "entity-registry"], optional = true}
+
+[features]
+default = []
+web = ["dioxus/web"]
+#desktop = ["dioxus/desktop"]
+server = ["dioxus/server", "dep:sea-orm"]

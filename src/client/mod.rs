@@ -1,5 +1,5 @@
+use views::Home;
 use dioxus::prelude::*;
-use views::{Home};
 
 mod views;
 
@@ -13,24 +13,8 @@ enum Route {
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 
-fn main() {
-    // dioxus's entrypoint is always the client, so we have to ask server to init.
-    // including this manual serve call so init can be async
-    
-    #[cfg(feature = "server")]
-    dioxus::serve(|| async move {
-        server::backend::init().await;
-
-        // default stuff to let this function continue as normal
-        Ok(dioxus::server::router(App))
-    });
-    //
-    #[cfg(not(feature = "server"))]
-    dioxus::launch(App);
-}
-
 #[component]
-fn App() -> Element {
+pub fn App() -> Element {
     // Build cool things ✌️
 
     rsx! {
