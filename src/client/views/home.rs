@@ -1,5 +1,5 @@
 use crate::client::dioxus_components::input::Input;
-use super::super::components::invisible_drop::InvisibleDrop;
+use super::super::components::*;
 use dioxus::prelude::*;
 
 #[component]
@@ -11,7 +11,11 @@ pub fn Home() -> Element {
             Input {
                 {"test"}
             },
-            p {"hiiiiii heujifrsudijfohnlesrtgh"}
+            p {
+                "Welcome to the Home Page!"
+                Icon { "face" }
+                "haha hehe hoho"
+            }
         }
     }
 }

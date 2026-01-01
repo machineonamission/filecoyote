@@ -1,16 +1,20 @@
 :root {
-    --border-dance-color: #fff8;
-    --border-dance-big: 1rem;
-    --border-dance-small: 0.25rem;
+    --bd-gap-and-dash-length: 0.75rem;
+    --bd-border-width: 0.15rem;
+    --bd-border-color: #fff8;
+    --bd-dash-percent: 70%;
+    --bd-speed: 10rem;
 }
 
 .borderdance {
-    background-image: linear-gradient(90deg, var(--border-dance-color) 50%, transparent 50%), linear-gradient(90deg, var(--border-dance-color) 50%, transparent 50%), linear-gradient(0deg, var(--border-dance-color) 50%, transparent 50%), linear-gradient(0deg, var(--border-dance-color) 50%, transparent 50%);
+    background: linear-gradient(90deg, var(--bd-border-color) var(--bd-dash-percent), transparent calc(100% - var(--bd-dash-percent))),
+    linear-gradient(90deg, var(--bd-border-color) var(--bd-dash-percent), transparent calc(100% - var(--bd-dash-percent))),
+    linear-gradient(0deg, var(--bd-border-color) var(--bd-dash-percent), transparent calc(100% - var(--bd-dash-percent))),
+    linear-gradient(0deg, var(--bd-border-color) var(--bd-dash-percent), transparent calc(100% - var(--bd-dash-percent)));
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
-    background-size: var(--border-dance-big) var(--border-dance-small), var(--border-dance-big) var(--border-dance-small), var(--border-dance-small) var(--border-dance-big), var(--border-dance-small) var(--border-dance-big);
-    background-position: left top, right bottom, left bottom, right top;
-    animation: border-dance 1s infinite linear;
-    transition: animation-duration 1s ease-in-out;
+    background-size: var(--bd-gap-and-dash-length) var(--bd-border-width), var(--bd-gap-and-dash-length) var(--bd-border-width), var(--bd-border-width) var(--bd-gap-and-dash-length), var(--bd-border-width) var(--bd-gap-and-dash-length);
+    background-position: 0 0, var(--bd-speed) 100%, 0 var(--bd-speed), 100% 0;
+    animation: border-dance 10s infinite linear;
 }
 
 .highlight.borderdance:not(#dropborder) {
@@ -23,10 +27,8 @@
 }
 
 @keyframes border-dance {
-    0% {
-        background-position: left top, right bottom, left bottom, right top;
-    }
+    0% {}
     100% {
-        background-position: left var(--border-dance-big) top, right var(--border-dance-big) bottom, left bottom var(--border-dance-big), right top var(--border-dance-big);
+        background-position: var(--bd-speed) 0, 0 100%, 0 0, 100% var(--bd-speed);
     }
 }

@@ -1,0 +1,22 @@
+/*this is designed to be included via rust macro and format string to insert the asset*/
+@font-face {{
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    src: url({}) format('woff');
+}}
+
+.material-symbols {{
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    /*font-size: 24px;  !* Preferred icon size *!*/
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    font-optical-sizing: auto;
+    font-variation-settings: 'FILL' 1;
+}}

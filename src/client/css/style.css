@@ -4,9 +4,11 @@
 
 .invisible-drop-zone {
     position: fixed;
-    top: 1rem;
-    left: 1rem;
-    right:1rem;
-    bottom: 1rem;
+    --border-dist: 0.5rem;
+    top: var(--border-dist);
+    left: var(--border-dist);
+    right: var(--border-dist);
+    bottom: var(--border-dist);
+    pointer-events: none;
     /*z-index: 9999;*/
 }

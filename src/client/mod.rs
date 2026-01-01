@@ -7,6 +7,8 @@ mod components;
 mod dioxus_components;
 mod ahl;
 
+use components::*;
+
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
@@ -35,6 +37,7 @@ pub fn App() -> Element {
             document::Stylesheet { href: sheet }
         }
         ahl::AhlPatch {}
+        components::icon::IconSheet {}
 
         Router::<Route> {}
     }
