@@ -1,0 +1,5 @@
+[application]
+
+tailwind_output = "src/client/assets/tailwind.css"
+#asset_dir = "src/client/css"
+#tailwind_input = "src/client/assets/tailwind/input.css"

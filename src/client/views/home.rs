@@ -1,11 +1,12 @@
 use dioxus::prelude::*;
-
+use crate::client::components::input::Input;
 
 #[component]
 pub fn Home() -> Element {
     rsx! {
-        p {
-            "Welcome to Dioxus Fullstack!"
+        Input {
+            {"test"}
         }
+        p {"hiiiiii heujifrsudijfohnlesrtgh"}
     }
 }

@@ -5,6 +5,7 @@ edition = "2024"
 
 [dependencies]
 dioxus = { version = "0.7.2", features = ["router", "fullstack"] }
+dioxus-primitives = { git = "https://github.com/DioxusLabs/components", version = "0.0.1", default-features = false }
 
 # server deps
 
@@ -15,5 +16,5 @@ sea-orm = { version = "2.0.0-rc", features = ["sqlx-sqlite", "runtime-tokio-nati
 default = []
 # designed for web, but desktop and other platforms should work just fine!
 web = ["dioxus/web"]
-#desktop = ["dioxus/desktop"]
+desktop = ["dioxus/desktop"]
 server = ["dioxus/server", "dep:sea-orm"]

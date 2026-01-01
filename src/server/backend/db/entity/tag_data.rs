@@ -1,7 +1,7 @@
-use sea_orm::{ColIdx, ColumnType, DynIden, QueryResult, TryGetError, Value, sea_query};
+use sea_orm::{ColIdx, ColumnType, DynIden, QueryResult, TryGetError, Value, sea_query, TryFromU64, DbErr};
 use sea_orm::sea_query::{ArrayType, ValueTypeErr};
 use sea_orm::ColumnType::Custom;
-
+use crate::server::backend::db::entity::tag_entry::Relation::Tag;
 // fuckass way to hack in true "any" type support for sqlite <-> sea-orm boundary
 
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -56,5 +56,11 @@ impl sea_orm::TryGetable for TagData {
                 Ok(TagData::String(s))
             }
         }
+    }
+}
+
+impl TryFromU64 for TagData {
+    fn try_from_u64(n: u64) -> Result<Self, DbErr> {
+        Ok(TagData::Int(n.cast_signed()))
     }
 }

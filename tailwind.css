@@ -1,0 +1,10 @@
+/*this has to be at the root. yeah it sucks but whatever it doesnt contain much*/
+
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+}

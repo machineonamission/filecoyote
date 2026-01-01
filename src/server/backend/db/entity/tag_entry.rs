@@ -9,24 +9,18 @@ use super::tag_data::TagData;
 #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
 #[sea_orm(table_name = "tag_entry")]
 pub struct Model {
-
-    #[sea_orm(primary_key)]
-    pub id: i64,
-
     // each entry links a file to a tag
 
+    #[sea_orm(primary_key)]
     pub file_id: i64,
 
-    // unique_key serves 2 functions. 1: having duplicate tag entries is weird. 2: its the only way
-    // i can figure out to make sea-orm generate a 2-column index across tag -> data, which we need
-
-    #[sea_orm(unique_key = "tag_entry_tag_id_data_uindex")]
+    #[sea_orm(primary_key)]
     pub tag_id: i64,
 
     // and contains data (the TagData is a fucky wrapper around sqlite any, because sorting numbers
     // that are strings sucks)
 
-    #[sea_orm(unique_key = "tag_entry_tag_id_data_uindex")]
+    #[sea_orm(primary_key)]
     pub data: TagData,
 
     #[sea_orm(
