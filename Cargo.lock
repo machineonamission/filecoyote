@@ -2000,6 +2000,7 @@ version = "0.1.0"
 dependencies = [
  "dioxus",
  "dioxus-primitives",
+ "rand 0.9.2",
  "sea-orm",
 ]
 
