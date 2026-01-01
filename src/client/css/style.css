@@ -1,3 +1,12 @@
-body {
-    padding: 2rem;
+/*body {*/
+/*    padding: 2rem;*/
+/*}*/
+
+.invisible-drop-zone {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right:1rem;
+    bottom: 1rem;
+    /*z-index: 9999;*/
 }

@@ -1,0 +1,32 @@
+:root {
+    --border-dance-color: #fff8;
+    --border-dance-big: 1rem;
+    --border-dance-small: 0.25rem;
+}
+
+.borderdance {
+    background-image: linear-gradient(90deg, var(--border-dance-color) 50%, transparent 50%), linear-gradient(90deg, var(--border-dance-color) 50%, transparent 50%), linear-gradient(0deg, var(--border-dance-color) 50%, transparent 50%), linear-gradient(0deg, var(--border-dance-color) 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: var(--border-dance-big) var(--border-dance-small), var(--border-dance-big) var(--border-dance-small), var(--border-dance-small) var(--border-dance-big), var(--border-dance-small) var(--border-dance-big);
+    background-position: left top, right bottom, left bottom, right top;
+    animation: border-dance 1s infinite linear;
+    transition: animation-duration 1s ease-in-out;
+}
+
+.highlight.borderdance:not(#dropborder) {
+    animation-duration: 0.2s;
+}
+
+.borderdance-under {
+    background-size: 0, var(--border-dance-big) var(--border-dance-small), 0, 0;
+    animation-direction: reverse;
+}
+
+@keyframes border-dance {
+    0% {
+        background-position: left top, right bottom, left bottom, right top;
+    }
+    100% {
+        background-position: left var(--border-dance-big) top, right var(--border-dance-big) bottom, left bottom var(--border-dance-big), right top var(--border-dance-big);
+    }
+}

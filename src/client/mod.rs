@@ -4,6 +4,7 @@ use dioxus::prelude::*;
 mod views;
 pub mod entry;
 mod components;
+mod dioxus_components;
 mod ahl;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
@@ -14,9 +15,11 @@ enum Route {
 }
 
 
-const STYLESHEETS: [Asset; 3] = [
+const STYLESHEETS: [Asset; 5] = [
     asset!("./assets/tailwind.css"),
-    asset!("./components/dx-components-theme.css"),
+    asset!("./dioxus_components/dx-components-theme.css"),
+    asset!("./css/borderdance.css"),
+    asset!("./css/fadeinout.css"),
     asset!("./css/style.css"),
 ];
 const FAVICON: Asset = asset!("./assets/favicon.ico");

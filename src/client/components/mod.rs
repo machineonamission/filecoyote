@@ -1,2 +1,1 @@
-// AUTOGENERTED Components module
-pub mod input;
+pub mod invisible_drop;

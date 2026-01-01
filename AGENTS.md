@@ -53,10 +53,10 @@ rsx! {
 	}
 	// Prefer loops over iterators
 	for i in 0..5 {
-		div { "{i}" } // use elements or components directly in loops
+		div { "{i}" } // use elements or dioxus_components directly in loops
 	}
 	if condition {
-		div { "Condition is true!" } // use elements or components directly in conditionals
+		div { "Condition is true!" } // use elements or dioxus_components directly in conditionals
 	}
 
 	{children} // Expressions are wrapped in brace

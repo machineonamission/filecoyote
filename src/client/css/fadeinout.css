@@ -1,0 +1,17 @@
+.fadein {
+    /*visibility: visible;*/
+    opacity: 1 !important;
+
+}
+
+/* Fade-Out Effect */
+.fadeout {
+    /*visibility: hidden;*/
+    opacity: 0 !important;
+
+}
+
+.fadein, .fadeout {
+    transition: opacity 0.25s linear;
+
+}
